@@ -40,5 +40,3 @@ function watch() {
   gulp.watch('./sass/**/*.scss', sass());
 }
 
-
-
