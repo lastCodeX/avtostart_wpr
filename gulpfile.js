@@ -3,6 +3,10 @@ const sass = require('gulp-sass')
 const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
 const cssnano = require('gulp-cssnano')
+const browserSync = require('browser-sync').create()
+const del = require('del')
+const cache = require('gulp-cache')
+const imagemin = require('gulp-imagemin')
 
 
 sass.compiler = require('node-sass')
@@ -34,6 +38,69 @@ function cssLibs() {
       .pipe(concat('libs.min.css'))
       .pipe(gulp.dest('./dist/css'));
 }
+
+//включаем live reload
+function browser_Sync() {
+  browserSync.init({
+      server: {
+          baseDir: './'
+      },
+      notify: false
+  });
+}
+
+// сборка ресурсов в папку dist
+let filesToMove = [
+  './fonts/**/*',
+  './*.html'
+];
+
+function move() {
+    gulp.src(filesToMove, {base: './'})
+    .pipe(gulp.dest('dist'));
+}
+
+// очистка папки dist
+function clean() {
+  return del.sync('./dist');
+}
+
+//очистка кэша
+function clear() {
+  return cache.clearAll();
+}
+
+// сжатие картинок gif, jpg, svg
+function img() {
+  return gulp.src('./img/*')
+      .pipe(cache(imagemin([
+        imagemin.gifsicle({interlaced: true}),
+        imagemin.mozjpeg({quality: 75, progressive: true}),
+        imagemin.optipng({optimizationLevel: 5}),
+        imagemin.svgo({
+            plugins: [
+              {removeViewBox: true},
+              {cleanupIDs: false}
+            ]
+        })
+
+      ])))
+      .pipe(gulp.dest('./dist/img'));
+}
+
+//продакшен
+function build(cb){
+  gulp.parallel(
+      'clean',
+      'clear',
+      'sass',
+      'scripts',
+      'css-libs',
+      'img',
+      'move'
+  ), cb()
+}
+
 
 //включаем watch 
 function watch() {
