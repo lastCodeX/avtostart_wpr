@@ -1,4 +1,5 @@
 const gulp = require('gulp')
+const {parallel, watch} = require('gulp')
 const sass = require('gulp-sass')
 const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
@@ -9,13 +10,15 @@ const cache = require('gulp-cache')
 const imagemin = require('gulp-imagemin')
 
 
+
 sass.compiler = require('node-sass')
 
 //подключаем sass
-function sass() {
+function sassToCss(cb) {
   return gulp.src('./sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./css')),
+    cb()
 }
 
 //объединяем и минифицируем js
@@ -29,10 +32,9 @@ function scripts() {
 //объединяем и минифицируем css
 function cssLibs() {
   return gulp.src([
-          './app/libs/bootstrap-4.2.1-dist/css/bootstrap.min.css',
-          './app/css/fonts.css',
-          './app/css/main_1.css',
-          './app/css/media.css'
+          './css/fonts.css',
+          './css/main.css',
+          './css/media.css'
   ])
       .pipe(cssnano())
       .pipe(concat('libs.min.css'))
@@ -89,21 +91,27 @@ function img() {
 }
 
 //продакшен
-function build(cb){
-  gulp.parallel(
-      'clean',
-      'clear',
-      'sass',
-      'scripts',
-      'css-libs',
-      'img',
-      'move'
-  ), cb()
-}
+exports.build = parallel(
+      clean,
+      clear,
+      sassToCss,
+      scripts,
+      cssLibs,
+      img,
+      move
+  )
 
 
 //включаем watch 
-function watch() {
-  gulp.watch('./sass/**/*.scss', sass());
+function watchFiles(){
+  watch('./sass/**/*.scss', sassToCss).on('change', browserSync.reload)
+  watch('./index.html').on('change', browserSync.reload)
+  watch('./js/*.js').on('change', browserSync.reload)
 }
+
+// live reload в рабочей папке
+exports.dev = parallel(
+    browser_Sync,
+    watchFiles
+  )
 

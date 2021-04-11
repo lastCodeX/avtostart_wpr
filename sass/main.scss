@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box
+}
+.fixed-page {
+  overflow: hidden;
+}
+.header {
+  background: #000;
+  .header__top {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    background: #fff;
+    .header__logo-img {
+      width: 167px;
+      height: 61px;
+    }
+    .header__burger-mnu.open-mnu {
+      span {
+        opacity: 0;
+        transition: 0.5s;
+      }
+      &:after {
+        transform: rotate(-38deg);
+        bottom: 26px;
+        transition: 0.4s;
+      }
+      &:before {
+        transform: rotate(38deg);
+        top: 26px;
+        transition: 0.4s;
+      }
+    }
+    .header__burger-mnu {
+      position: relative;
+      width: 51px;
+      height: 58px;
+      display: block;
+      span {
+        top: 25px;
+        height: 7px;
+        width: 100%;
+        position: absolute;
+        background: #FDB819;
+        margin: 0 auto;
+      }
+      &:after {
+        content: '';
+        bottom: 5px;
+        height: 7px;
+        width: 100%;
+        position: absolute;
+        background: #FDB819;
+        margin: 0 auto;
+        
+      }
+      &:before {
+        content: '';
+        top: 5px;
+        height: 7px;
+        width: 100%;
+        position: absolute;
+        background: #FDB819;
+        margin: 0 auto;
+        
+      }
+      
+    }
+    
+    .header__nav {
+      position: absolute;
+      width: 100%;
+      top: 75px;
+      display: block;
+      background-color: #F9F9F2;
+      left: -100%;
+      transition: all 0.4s ease;
+      .header__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        overflow: auto;
+        z-index: 2;
+        & li {
+          list-style: none;
+          font-size: 16px;
+          text-transform: uppercase;
+          & a {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .open-mnu {
+      left: 0; 
+    }
+  } 
+}
