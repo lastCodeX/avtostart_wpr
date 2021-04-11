@@ -1,0 +1,25 @@
+@font-face {
+  font-family:'PoppinsRegular';
+  src: url('./../fonts/PoppinsRegular/Regular.eot');
+src: url('./../fonts/PoppinsRegular/Regular.eot?#iefix') format('embedded-opentype'),
+  url('./../fonts/PoppinsRegular/Poppins Regular.woff2') format('woff2'),
+  url('./../fonts/PoppinsRegular/Poppins Regular.woff') format('woff'),
+  url('./../fonts/PoppinsRegular/Poppins Regular.svg#Poppins Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2212;
+}
+
+@font-face {
+  font-family:'PoppinsBoldItalic';
+  src: url('./../fonts/PoppinsBoldItalic/Poppins Bold Italic.eot');
+src: url('./../fonts/PoppinsBoldItalic/Poppins Bold Italic.eot?#iefix') format('embedded-opentype'),
+  url('./../fonts/PoppinsBoldItalic/Poppins Bold Italic.woff2') format('woff2'),
+  url('./../fonts/PoppinsBoldItalic/Poppins Bold Italic.woff') format('woff'),
+  url('./../fonts/PoppinsBoldItalic/Poppins Bold Italic.svg#Poppins Bold Italic') format('svg');
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2212;
+}

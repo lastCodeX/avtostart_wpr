@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'PoppinsRegular';
+  src: url("./../fonts/PoppinsRegular/Regular.eot");
+  src: url("./../fonts/PoppinsRegular/Regular.eot?#iefix") format("embedded-opentype"), url("./../fonts/PoppinsRegular/Poppins Regular.woff2") format("woff2"), url("./../fonts/PoppinsRegular/Poppins Regular.woff") format("woff"), url("./../fonts/PoppinsRegular/Poppins Regular.svg#Poppins Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2212; }
+
+@font-face {
+  font-family: 'PoppinsBoldItalic';
+  src: url("./../fonts/PoppinsBoldItalic/Poppins Bold Italic.eot");
+  src: url("./../fonts/PoppinsBoldItalic/Poppins Bold Italic.eot?#iefix") format("embedded-opentype"), url("./../fonts/PoppinsBoldItalic/Poppins Bold Italic.woff2") format("woff2"), url("./../fonts/PoppinsBoldItalic/Poppins Bold Italic.woff") format("woff"), url("./../fonts/PoppinsBoldItalic/Poppins Bold Italic.svg#Poppins Bold Italic") format("svg");
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-2212; }
+
 * {
   box-sizing: border-box; }
 
@@ -73,9 +91,43 @@
         z-index: 2; }
         .header .header__top .header__nav .header__menu li {
           list-style: none;
+          font-family: "PoppinsRegular", sans-serif;
           font-size: 16px;
-          text-transform: uppercase; }
+          margin-top: 10px; }
           .header .header__top .header__nav .header__menu li a {
-            text-decoration: none; }
+            text-decoration: none;
+            color: #000; }
+            .header .header__top .header__nav .header__menu li a:hover {
+              color: #FDB819; }
     .header .header__top .open-mnu {
       left: 0; }
+  .header .header__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 710px;
+    background-image: url("./../img/yellow_car.png"), url("./../img/Wheels.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50% 11%, 50% 56%; }
+    .header .header__content .header__title {
+      color: #fff;
+      font-family: "PoppinsBoldItalic", sans-serif;
+      font-size: 33px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 50px; }
+    .header .header__content .header__evaluate {
+      margin-bottom: 50px;
+      width: 200px;
+      height: 50px;
+      padding-right: 50px;
+      background-color: #FDB819;
+      background-image: url("./../img/evalFoto.png");
+      background-repeat: no-repeat;
+      background-position: 0 50%;
+      color: #fff;
+      font-family: "PoppinsRegular", sans-serif; }
+    .header .header__content .header__price {
+      margin-bottom: 120px; }
