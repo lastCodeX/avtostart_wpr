@@ -1,4 +1,3 @@
-@import "./fonts";
 * {
   box-sizing: border-box
 }
@@ -115,9 +114,12 @@
     background-image: url('./../img/yellow_car.png'), url('./../img/Wheels.png');
     background-repeat: no-repeat, no-repeat;
     background-position: 50% 11%, 50% 56%;
+    background-size: 88%;
     .header__title {
       color: #fff;
-      font-family: "PoppinsBoldItalic", sans-serif;
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-style: italic;
       font-size: 33px;
       text-transform: uppercase;
       text-align: center;
@@ -127,16 +129,28 @@
       margin-bottom: 50px;
       width: 200px;
       height: 50px;
-      padding-right: 50px;
+      padding-left: 48px;
       background-color: #FDB819;
       background-image: url('./../img/evalFoto.png');
       background-repeat: no-repeat;
-      background-position: 0 50%;
+      background-position: 6% 50%;
       color: #fff;
-      font-family: "PoppinsRegular", sans-serif;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
     }
-    .header__price {
+    .header__price-wrap {
       margin-bottom: 120px;
+      display: flex;
+      align-items: center;
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        margin-left: 10px;
+      }
     }
   }
 }
+
+@import "./_media"
