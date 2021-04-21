@@ -12,30 +12,36 @@
 </head>
 <body>
   <header class="header">
-    <div class="header__container">
-      <div class="header__top">
-        <div class="header__logo">
-          <img class="header__logo-img" src="./img/logo_header.svg" alt="Logo" >
+    <div class="header__top">
+      <div class="container">
+        <div class="header__top-wrapper">
+          <div class="header__logo">
+            <img class="header__logo-img" src="./img/logo_header.svg" alt="Logo" >
+          </div>
+          <div class="header__burger-mnu">
+            <span></span>
+          </div>
+          <nav class="header__nav">
+            <ul class="menu header__menu">
+                <li><a class="menu__item" href="#">Главная</a></li>
+                <li><a class="menu__item" href="#">О Нас</a></li>
+                <li><a class="menu__item" href="#">Цены</a></li>
+                <li><a class="menu__item" href="#">Наши работы</a></li>
+                <li><a class="menu__item" href="#">Контакты</a></li>
+            </ul>
+          </nav>
         </div>
-        <div class="header__burger-mnu">
-          <span></span>
-        </div>
-        <nav class="header__nav">
-          <ul class="menu header__menu">
-              <li><a class="menu__item" href="#">Главная</a></li>
-              <li><a class="menu__item" href="#">О Нас</a></li>
-              <li><a class="menu__item" href="#">Цены</a></li>
-              <li><a class="menu__item" href="#">Наши работы</a></li>
-              <li><a class="menu__item" href="#">Контакты</a></li>
-          </ul>
-      </nav>
       </div>
-      <div class="header__content">
-        <h1 class="header__title">Автосервис с безупречной репутацией</h1>
-        <button class="header__evaluate">оценить стоимость ремонта по фото</button>
-        <div class="header__price-wrap">
-          <img class="header__price-img" src="./img/Price.png" alt="Price img">
-          <a class="header__price" href="#">Прайс</a>
+    </div>
+    <div class="header__content">
+      <div class="container">
+        <div class="header__content-wrapper">
+          <h1 class="header__title">Автосервис с безупречной репутацией</h1>
+          <button class="header__evaluate">оценить стоимость ремонта по фото</button>
+          <div class="header__price-wrap">
+            <img class="header__price-img" src="./img/Price.png" alt="Price img">
+            <a class="header__price" href="#">Прайс</a>
+          </div>
         </div>
       </div>
     </div>
