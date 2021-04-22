@@ -90,12 +90,9 @@
       .header .header__top .header__top-wrapper .open-mnu {
         left: 0; }
   .header .header__content {
-    width: 100%;
-    height: 710px;
-    background-image: url("./../img/yellow_car.png"), url("./../img/Wheels.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: 50% 15%, 50% 56%;
-    background-size: 88%; }
+    height: 870px;
+    position: relative;
+    overflow: hidden; }
     .header .header__content .header__content-wrapper {
       height: 100%;
       display: flex;
@@ -133,15 +130,23 @@
           font-family: 'Poppins', sans-serif;
           font-weight: 400;
           margin-left: 10px; }
+    .header .header__content::before {
+      position: absolute;
+      content: '';
+      width: 500px;
+      height: 1000px;
+      right: -278px;
+      top: -92px;
+      background-color: #FDB819;
+      opacity: .8;
+      -webkit-transform: rotate(-17deg);
+      transform: rotate(-17deg); }
 
 @media (min-width: 580px) {
   .container {
     max-width: 540px; }
   .header .header__top {
-    padding: 5px 35px; }
-  .header .header__content {
-    background-position: 50% 5%, 50% 85%;
-    background-size: 81%; } }
+    padding: 5px 35px; } }
 
 @media (min-width: 800px) {
   .container {
@@ -160,10 +165,8 @@
         justify-content: flex-end; }
         .header .header__top .header__top-wrapper .header__nav .header__menu .menu__item {
           margin-left: 30px; }
-  .header .header__content {
-    background-size: 65%; }
-    .header .header__content .header__content-wrapper .header__title {
-      font-size: 45px; } }
+  .header .header__content .header__content-wrapper .header__title {
+    font-size: 45px; } }
 
 @media (min-width: 1050px) {
   .container {
